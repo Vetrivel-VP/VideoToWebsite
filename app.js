@@ -11,25 +11,25 @@ const text_2 = section.querySelector('h1');
 const controller = new ScrollMagic.Controller();
 
 let scene = new ScrollMagic.Scene({
-    duration : 10000,
-    triggerElement : intro,
-    triggerHook : 0
+    duration: 10000,
+    triggerElement: intro,
+    triggerHook: 0
 })
-.addIndicators()
-.setPin(intro)
-.addTo(controller);
+    // .addIndicators()
+    .setPin(intro)
+    .addTo(controller);
 
 // TEXT ANIMATION
 
-const textAnim = TweenMax.fromTo(text, 3, {opacity : 1}, {opacity : 0});
+const textAnim = TweenMax.fromTo(text, 3, { opacity: 1 }, { opacity: 0 });
 
 let scene_1 = new ScrollMagic.Scene({
-    duration : 3000,
-    triggerElement : intro,
-    triggerHook : 0
+    duration: 3000,
+    triggerElement: intro,
+    triggerHook: 0
 })
-.setTween(textAnim)
-.addTo(controller);
+    .setTween(textAnim)
+    .addTo(controller);
 
 
 // VIDEO ANIMATIONS
@@ -38,7 +38,7 @@ let scrollpos = 0;
 let delay = 0;
 
 // E => instead of this you can use Vanilla JS onScroll()
-scene.on("update", e =>{
+scene.on("update", e => {
     scrollpos = e.scrollPos / 1000; // ScrollPosition from ms => sec
 });
 
